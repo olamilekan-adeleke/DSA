@@ -34,7 +34,70 @@ class LinkedList<E> {
     final Node<E> newTail = Node(value: value);
 
     tail!.next = newTail;
-    tail = tail!.next;
+    tail = newTail;
+  }
+
+  /// Get a node by index
+  Node<E>? nodeAt(int index) {
+    Node<E>? currentNode = head;
+    int currentIndex = 0;
+
+    while (currentNode != null && currentIndex < index) {
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+
+    return currentNode;
+  }
+
+  /// Insert a node after a given node
+  Node<E> insertAfter(Node<E> node, E value) {
+    if (node == tail) {
+      append(value);
+      return tail!;
+    }
+
+    final Node<E> newNode = Node(value: value, next: node.next);
+    node.next = newNode;
+    return newNode;
+  }
+
+  /// remove the first node on the list
+  E? pop() {
+    final E? value = head?.value;
+    head = head?.next;
+
+    if (isEmpty) tail = null;
+
+    return value;
+  }
+
+  /// remove the last node on the list
+  E? removeLast() {
+    if (head?.next == null) return pop();
+
+    Node<E>? currentNode = head;
+    while (currentNode!.next != tail) {
+      currentNode = currentNode.next;
+    }
+
+    final E? value = tail?.value;
+    tail = currentNode;
+    tail?.next = null;
+
+    return value;
+  }
+
+  // remove a node after a given node
+  E? removeAfter(Node<E> node) {
+    final E? value = node.next?.value;
+
+    if (node.next == tail) {
+      tail = node;
+    }
+
+    node.next = node.next?.next;
+    return value;
   }
 
   @override
