@@ -19,35 +19,79 @@ void main(List<String> args) {
   final LinkedList<int> linkedList = LinkedList<int>();
 
   linkedList.push(3);
+  linkedList.push(3);
+  linkedList.push(3);
+  linkedList.push(3);
+  linkedList.push(3);
   linkedList.push(2);
   linkedList.push(1);
   linkedList.push(0);
+  linkedList.push(3);
+  linkedList.push(3);
 
   linkedList.append(5);
   linkedList.append(6);
 
   print(linkedList);
 
-  Node<int>? node = linkedList.nodeAt(2);
-  print(node?.value ?? 'Not Found!');
-  linkedList.insertAfter(node!, 4);
+  // Node<int>? node = linkedList.nodeAt(2);
+  // print(node?.value ?? 'Not Found!');
+  // linkedList.insertAfter(node!, 4);
 
-  Node<int>? node2 = linkedList.nodeAt(3);
-  print(node2?.value ?? 'Not Found!');
-  linkedList.insertAfter(node2!, 42);
+  // Node<int>? node2 = linkedList.nodeAt(3);
+  // print(node2?.value ?? 'Not Found!');
+  // linkedList.insertAfter(node2!, 42);
+
+  // print(linkedList);
+
+  // print('Popped Value: ${linkedList.pop()}');
+
+  // print(linkedList);
+
+  // print('Remove Last Value: ${linkedList.removeLast()}');
+
+  // print(linkedList);
+
+  // print('Remove Last At index: 3 Value: ${linkedList.removeAfter(node2)}');
+
+  // print(linkedList);
+
+  // printListInReserve(linkedList.head);
+
+  // print('Middle Node: ${getMiddle(linkedList)?.value}');
+
+  linkedList.removeAll(3);
 
   print(linkedList);
+}
 
-  print('Popped Value: ${linkedList.pop()}');
+/// Create a function that prints the nodes of a linked list in reverse order. For example:
+/// 1 -> 2 -> 3 -> null
+/// should print out the following:
+/// 3
+/// 2
+/// 1
+void printListInReserve<T>(Node<T>? node) {
+  if (node == null) return;
 
-  print(linkedList);
+  printListInReserve(node.next);
 
-  print('Remove Last Value: ${linkedList.removeLast()}');
+  print(node.value);
+}
 
-  print(linkedList);
+//? Create a function that finds the middle node of a linked list.
+//? 1 -> 2 -> 3 -> 4 -> null
+//? middle is 3
+//? 1 -> 2 -> 3 -> null
+//? middle is 2
+Node<E>? getMiddle<E>(LinkedList<E> list) {
+  Node<E>? slow = list.head;
+  Node<E>? fast = list.head;
 
+  while (fast?.next != null) {
+    slow = slow?.next;
+    fast = fast?.next?.next;
+  }
 
-  print('Remove Last At index: 3 Value: ${linkedList.removeAfter(node2)}');
-
-  print(linkedList);
+  return slow;
 }

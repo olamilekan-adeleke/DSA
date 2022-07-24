@@ -100,6 +100,26 @@ class LinkedList<E> {
     return value;
   }
 
+  void removeAll(E value) {
+    // first case if if the head value is equal to the value i want to remove
+    while (head != null && head!.value == value) {
+      head = head!.next;
+    }
+
+    // next we unlink nodes that have the value
+
+    // Node<E>? current = head;
+    // while (current?.next != null) {
+    //   if (current?.next?.value == value) {
+    //     current = current?.next?.next;
+    //   }
+    // }
+    
+    // tail = current;
+
+    print('out');
+  }
+
   @override
   String toString() {
     if (isEmpty) return 'Empty List';
