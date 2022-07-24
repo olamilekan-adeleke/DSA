@@ -1,6 +1,6 @@
 import 'queues.dart';
 
-class QueueUsingList<E> extends Queue<E> {
+class QueueUsingList<E> implements Queue<E> {
   final List<E> _list = <E>[];
   @override
   E? dequeue() {

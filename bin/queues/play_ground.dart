@@ -1,7 +1,10 @@
 import '../../lib/queues/queue_using_list.dart';
+import '../../lib/queues/queue_using_single_linked_list.dart';
 
 void main(List<String> args) {
-  final QueueUsingList<String> queue = QueueUsingList<String>();
+  // final QueueUsingList<String> queue = QueueUsingList<String>();
+  final QueueUsingSingleLinkedList<String> queue =
+      QueueUsingSingleLinkedList<String>();
 
   queue.enqueue('Ray');
   queue.enqueue('Brian');
