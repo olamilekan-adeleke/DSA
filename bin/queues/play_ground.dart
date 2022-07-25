@@ -1,3 +1,4 @@
+import '../../lib/queues/deque.dart';
 import '../../lib/queues/queue_extention.dart';
 import '../../lib/queues/queue_using_double_stack.dart';
 import '../../lib/queues/queue_using_list.dart';
@@ -39,4 +40,27 @@ void main(List<String> args) {
   }
 
   print('$player wins!!');
+
+
+  final deque = DequeueUsingSingleLinkedList<int>();
+
+  deque.enqueue(1, Direction.back);
+  deque.enqueue(2, Direction.back);
+  deque.enqueue(3, Direction.back);
+  deque.enqueue(4, Direction.back);
+
+  print(deque);
+
+  deque.enqueue(5, Direction.front);
+
+  print(deque);
+
+  deque.dequeue(Direction.back);
+  deque.dequeue(Direction.back);
+  deque.dequeue(Direction.back);
+  deque.dequeue(Direction.front);
+  deque.dequeue(Direction.front);
+  deque.dequeue(Direction.front);
+  
+  print(deque);
 }
