@@ -42,25 +42,25 @@ void main(List<String> args) {
   print('$player wins!!');
 
 
-  final deque = DequeueUsingSingleLinkedList<int>();
+  final dequeue = DequeueUsingSingleLinkedList<int>();
 
-  deque.enqueue(1, Direction.back);
-  deque.enqueue(2, Direction.back);
-  deque.enqueue(3, Direction.back);
-  deque.enqueue(4, Direction.back);
+  dequeue.enqueue(1, Direction.back);
+  dequeue.enqueue(2, Direction.back);
+  dequeue.enqueue(3, Direction.back);
+  dequeue.enqueue(4, Direction.back);
 
-  print(deque);
+  print(dequeue);
 
-  deque.enqueue(5, Direction.front);
+  dequeue.enqueue(5, Direction.front);
 
-  print(deque);
+  print(dequeue);
 
-  deque.dequeue(Direction.back);
-  deque.dequeue(Direction.back);
-  deque.dequeue(Direction.back);
-  deque.dequeue(Direction.front);
-  deque.dequeue(Direction.front);
-  deque.dequeue(Direction.front);
-  
-  print(deque);
+  dequeue.dequeue(Direction.back);
+  dequeue.dequeue(Direction.back);
+  dequeue.dequeue(Direction.back);
+  dequeue.dequeue(Direction.front);
+  dequeue.dequeue(Direction.front);
+  dequeue.dequeue(Direction.front);
+
+  print(dequeue);
 }
