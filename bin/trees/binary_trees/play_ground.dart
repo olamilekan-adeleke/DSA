@@ -21,7 +21,10 @@ void main(List<String> args) {
   final tree = createBinaryTree();
   print(tree);
 
-  // tree.traverseInOrder(print);
-  // tree.traversePreOrder(print);
+  tree.traverseInOrder(print);
+  tree.traversePreOrder(print);
   tree.traversePostOrder(print);
 }
+
+
+
