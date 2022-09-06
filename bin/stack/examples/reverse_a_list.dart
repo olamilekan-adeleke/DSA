@@ -1,6 +1,7 @@
 import '../implementation/stack.dart';
 
 /// Example: Reverse a List
+/// Level: Easy
 ///
 /// Create a function that prints the contents of a list in reverse order.
 void printListInReverse<E>(List<E> list) {
