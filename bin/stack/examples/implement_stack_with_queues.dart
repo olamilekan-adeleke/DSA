@@ -93,7 +93,7 @@ class MyCustomStack<E> implements CustomStack<E> {
 
   @override
   E? pop() {
-    while (_mainQueue.length == 1) {
+    while (_mainQueue.length > 1) {
       final E val = _mainQueue.removeAt(0);
       _secondaryQueue.add(val);
 
